@@ -199,8 +199,9 @@ export const TweetMedia = ({ tweet }: { tweet: EnrichedTweet }) => {
         <div className="relative flex transform-gpu snap-x snap-mandatory gap-4 overflow-x-auto">
           <div className="shrink-0 snap-center sm:w-2" />
           {tweet.photos.map((photo) => (
-            <img
-              key={photo.url}
+        
+            <Image
+            key={photo.url}
               src={photo.url}
               title={"Photo by " + tweet.user.name}
               alt={tweet.text}
