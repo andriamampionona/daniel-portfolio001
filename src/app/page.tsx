@@ -1,5 +1,8 @@
 import { IconCloudDemo } from "@/components/icons";
 import { AuroraText } from "@/components/magicui/aurora-text";
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+// import { ShimmerButton } from "@/components/magicui/shimmer-button";
+import { TypingAnimation } from "@/components/magicui/typing-animation";
 
 
 import Image from "next/image";
@@ -8,36 +11,34 @@ export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
-          Daniel <AuroraText>Nomenjanahary</AuroraText>
-        </h1>
+        
+        <div className="sm:flex-row  flex flex-col gap-4 items-center justify-between w-full max-w-3xl">
+          <div className="">
+            <h1 className="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
+              Daniel <AuroraText>Nomenjanahary</AuroraText>
+            </h1>
+  
+            <TypingAnimation className="sm:text-2xl text-white">Developpeur web full-stack</TypingAnimation>
+          </div>
+          <div className="">
+            <Image 
+              className="rounded-full"
+              alt="Daniel Nomenjanahary"
+              src={"/daniel-001.png"}
+              width={300}
+              height={300}
+            />
+          </div>
+          
+        </div>
+        <div className="">
+            <InteractiveHoverButton>Contactez-moi</InteractiveHoverButton>
+          </div>
         
         
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          {/* <ShimmerButton className="shadow-2xl"> */}
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            
-             
-            Me contacter
-             
-             
-          </a>
-          
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Mes projets
-          </a>
-        </div>
+       
+       
         <IconCloudDemo></IconCloudDemo>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
