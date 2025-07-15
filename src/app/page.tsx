@@ -1,6 +1,6 @@
 import { IconCloudDemo } from "@/components/icons";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import { ShimmerButton } from "@/components/magicui/shimmer-button";
+
 
 import Image from "next/image";
 
