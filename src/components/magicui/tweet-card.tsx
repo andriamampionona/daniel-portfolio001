@@ -7,6 +7,7 @@ import {
 } from "react-tweet";
 import { getTweet, type Tweet } from "react-tweet/api";
 import { cn } from "../../../lib/utils";
+import Image from "next/image";
 
 // import { cn } from "/lib/utils";
 
@@ -104,7 +105,7 @@ export const TweetHeader = ({ tweet }: { tweet: EnrichedTweet }) => (
   <div className="flex flex-row justify-between tracking-tight">
     <div className="flex items-center space-x-2">
       <a href={tweet.user.url} target="_blank" rel="noreferrer">
-        <img
+        <Image
           title={`Profile picture of ${tweet.user.name}`}
           alt={tweet.user.screen_name}
           height={48}
@@ -211,11 +212,14 @@ export const TweetMedia = ({ tweet }: { tweet: EnrichedTweet }) => {
       )}
       {!tweet.video &&
         !tweet.photos &&
-        // @ts-ignore
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-expect-error
         tweet?.card?.binding_values?.thumbnail_image_large?.image_value.url && (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={
-              // @ts-ignore
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-expect-error
               tweet.card.binding_values.thumbnail_image_large.image_value.url
             }
             className="h-64 rounded-xl border object-cover shadow-sm"
@@ -228,6 +232,7 @@ export const TweetMedia = ({ tweet }: { tweet: EnrichedTweet }) => {
 
 export const MagicTweet = ({
   tweet,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   components,
   className,
   ...props
