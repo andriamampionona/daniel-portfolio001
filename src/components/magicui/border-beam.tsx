@@ -100,6 +100,7 @@ export const BorderBeam = ({
           ...transition,
         }}
       />
+      
     </div>
   );
 };
