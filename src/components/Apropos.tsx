@@ -27,12 +27,12 @@ export default function Apropos() {
         <div className="w-full md :w-2/3  space-x-1.5 mt-2.5 ">
           <Card className='p-3'>
             <p className=''>
-              Je m'appelle <span className='font-medium text-2xl m-3 '>Daniel Nomenjanahary</span>, 
+              Je m&apos;appelle <span className='font-medium text-2xl m-3 '>Daniel Nomenjanahary</span>, 
             </p>
             <p className='mt-1.5'>
               Je suis un étudiant en Master en Génie Logiciel, passionné par le développement web moderne.
               Curieux et rigoureux, je me spécialise dans la création d’interfaces fluides et la conception d’API robustes, 
-              tout en gardant une attention particulière à l'expérience utilisateur et à la qualité du code.
+              tout en gardant une attention particulière à l’expérience utilisateur et à la qualité du code.
             
             </p>
             <p>
