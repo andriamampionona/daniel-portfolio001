@@ -7,7 +7,7 @@ import { Particles } from "@/components/magicui/particles";
 // import { ShimmerButton } from "@/components/magicui/shimmer-button";
 // import { ShimmerButton } from "@/components/magicui/shimmer-button";
 // import { TypingAnimation } from "@/components/magicui/typing-animation";
-import { ModeToggle } from "@/components/ModeToggle";
+// import { ModeToggle } from "@/components/ModeToggle";
 import Projects from "@/components/projets";
 // import { MySheet } from "@/components/sheet";
 import {   LinkedinIcon, MailIcon, Menu, PhoneCallIcon } from "lucide-react";
