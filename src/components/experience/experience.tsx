@@ -5,7 +5,7 @@ import Formation from './formation'
 
 function Experiences() {
   return (
-    <div className='py-16 px-6 md:px-20' id='experiencess'>
+    <div className='py-16 px-6 md:px-20'>
         <div className="flex flex-col gap-5 m-2" >
           <p className='text-5xl text-foreground font-bold text-center '>Expérience & Formation</p>
           <div className="flex flex-col gap-3 ">

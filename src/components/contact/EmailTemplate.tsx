@@ -17,7 +17,7 @@ const EmailTemplate: React.FC<EmailTemplateProps> = ({ name, email, subject, mes
         <Container className="bg-white rounded-lg shadow p-6">
           <Heading className="text-xl font-bold mb-4">Sujet: {subject}</Heading>
           <Text className="mb-4">🐺: {name}</Text>
-          <Text className="mb-4"> 🔗 : {email}</Text>
+          <Text className="mb-4">🔗 : {email}</Text>
           <Text className="mb-4">⚡: {message}</Text>
           </Container>
       </Body>

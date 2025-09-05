@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Apropos() {
   return (
-    <div id='apropos' className="font-mono m-6 flex flex-col gap-8 justify-between max-w-7xl mx-auto">
+    <div  className=" lg:px-10 md:px-0.5 font-mono  flex flex-col gap-8 justify-between  w-full">
       <TypingAnimation 
         className='
           text-3xl underline underline-offset-4 text-center 
@@ -26,7 +26,7 @@ export default function Apropos() {
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.6 }}
-          className="w-full md:w-1/3 flex justify-center"
+          className="w-full flex justify-center"
         >
           <Image
             alt='Illustration à propos de moi'
@@ -43,9 +43,9 @@ export default function Apropos() {
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="w-full md:w-2/3 space-y-6"
+          className="w-full md:w-full  space-y-6"
         >
-          <Card className='p-6 shadow-lg bg-background/80 backdrop-blur-md rounded-2xl border border-secondary'>
+          <Card className='p-6 w-full shadow-lg bg-background/80 backdrop-blur-md rounded-2xl border border-secondary'>
             <p className='text-lg leading-relaxed'>
               Je m&apos;appelle <span className='font-semibold text-2xl text-primary'>Daniel Nomenjanahary</span>, 
             </p>

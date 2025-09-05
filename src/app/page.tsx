@@ -12,20 +12,21 @@ import { useActiveSection } from "../../hooks/useActiveSection";
 import CompetencesSection from "@/components/competance/Competance";
 import { useState } from "react";
 import { Menu } from "lucide-react";
+import { ModeToggle } from "@/components/ModeToggle";
 
 
 const navItems = [
   { href: "#accueil", label: "Accueil" },
   { href: "#apropos", label: "À propos" },
-  { href: "#experiencess", label: "Expériences" },
+  { href: "#experience", label: "Expériences" },
   { href: "#competence", label: "Compétences" },
   { href: "#service", label: "Services" },
-  { href: "#projets", label: "Projets" },
+  { href: "#project", label: "Projets" },
   { href: "#contact", label: "Contact" },
 ];
 export default function Home() {
 
-  const [mobil, setMobil] = useState(true);
+  const [mobil, setMobil] = useState(false);
 
   const mobile = () => {setMobil(!mobil)}
 
@@ -37,7 +38,7 @@ export default function Home() {
     <>
     <div className="fixed overflow-visible w-full z-50 bg-secondary h-10 ">
          <nav className="">
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 hidden sm:flex">
+          <div className="text-center items-center justify-center mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 hidden sm:flex">
             
              
 {navItems.map(({ href, label }) => {
@@ -47,7 +48,7 @@ export default function Home() {
   return (
     <a
       href={href}
-      key={href}
+      key={id}
       className={`px-3 py-2 text-sm font-medium he transition-all duration-300 ${
         isActive
           ? "text-primary border-b-2 border-primary"
@@ -59,6 +60,10 @@ export default function Home() {
     </a>
   );
 })}
+
+<div className="">
+  <ModeToggle />
+</div>
         
         </div>
         <div className="flex flex-row z-5000 bg-secondary w-1/3 backdrop-opacity-90">
@@ -68,10 +73,10 @@ export default function Home() {
             <div className="space-y-1 px-2 pt-2 pb-3 flex flex-col h-screen">
                <a onClick={mobile} href="#accueil" aria-current="page" className=" border-b-[1px] border-primary px-3 py-2 text-sm font-medium text-white">Accueil</a>
                     <a onClick={mobile}  href="#apropos" className="px-3 py-2 text-sm font-medium text-foreground hover:border-b-[1px]  hover:border-primary animate-in">A propos</a>
-                    <a onClick={mobile}  href="#experiencess" className="px-3 py-2 text-sm font-medium text-foreground hover:border-b-[1px]  hover:border-primary animate-in">Experiences</a>
+                    <a onClick={mobile}  href="#experience" className="px-3 py-2 text-sm font-medium text-foreground hover:border-b-[1px]  hover:border-primary animate-in">Experiences</a>
                     <a onClick={mobile}  href="#competence" className=" px-3 py-2 text-sm font-medium text-foreground hover:border-b-[1px]  hover:border-primary animate-in">Compétences</a>
                     <a onClick={mobile}  href="#service" className=" px-3 py-2 text-sm font-medium text-foreground hover:border-b-[1px]  hover:border-primary animate-in">Mes service</a>
-                    <a onClick={mobile}  href="#projets" className=" px-3 py-2 text-sm font-medium text-foreground hover:border-b-[1px]  hover:border-primary animate-in">Mes projets</a>
+                    <a onClick={mobile}  href="#project" className=" px-3 py-2 text-sm font-medium text-foreground hover:border-b-[1px]  hover:border-primary animate-in">Mes projets</a>
                     <a onClick={mobile}  href="#contact" className=" px-3 py-2 text-sm font-medium text-foreground hover:border-b-[1px]  hover:border-primary animate-in">Me contacter</a>
                    
             </div>
@@ -92,33 +97,40 @@ export default function Home() {
           <HomePage/>
         </div>
         
-        <div id="apropos" className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken border-t-2  border-amber-50 w-full">
+        <div id="apropos" className="">
+        <div id="apropos" className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken w-full">
           <Apropos/>
         </div>
-        
-        
-        <div id="experiencess" className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken border-t-2  border-amber-50 w-full">
-          <Experiences/>
-          {/* <CompetencesSection/> */}
         </div>
         
-        <div id="competence" className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken border-t-2  border-amber-50 w-full">
+        
+        <div id="experience">
+  
+          <div  className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken border-amber-50 w-full">
+            <Experiences/>
+            {/* <CompetencesSection/> */}
+          </div>
+        </div>
+        
+        <div id="competence" className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken  border-amber-50 w-full">
           <CompetencesSection/>
         </div>
         
         
 
         
-        <div id="service" className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken border-t-2  border-amber-50 w-full">
+        <div id="service" className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken  border-amber-50 w-full">
           <MyServices/>
         </div>
+
+        <div id="project" className="pt-1.5">
         
-        
-        <div id="projets" className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken border-t-2  border-amber-50 w-full">
-          <Projects/>
+          <div  className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken  border-amber-50 w-full">
+            <Projects/>
+          </div>
         </div>
         
-        <div id="contact" className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken border-t-2  border-amber-50 w-full">
+        <div id="contact" className=" animate-accordion-up pt-16 min-h-screen bg-blend-darken  border-amber-50 w-full">
           <Contact/>
         </div>
         
@@ -127,10 +139,10 @@ export default function Home() {
        
         
       </main>
-      <footer className="text-center items-center justify-center">
+      <footer className="text-center justify-center">
         
-        <p>Copyright &copy;</p>
-        <p>2025</p>
+        <p className="text-xs text-gray-500">Copyright &copy;</p>
+        <p className="text-xs text-gray-500">2025</p>
       </footer>
     </div>
   </>

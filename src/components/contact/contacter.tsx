@@ -2,8 +2,8 @@
 
 import React from 'react'
 import ContactForm from './Contact';
-import {Locate, MailIcon, Phone} from 'lucide-react';
-import { FaFacebook, FaGithub, FaInstagram, FaWhatsappSquare } from 'react-icons/fa';
+import {LocateFixed, MailIcon} from 'lucide-react';
+import { FaFacebook, FaGithub, FaLinkedin, FaWhatsappSquare } from 'react-icons/fa';
 
 export default function Contact() {
 
@@ -18,14 +18,20 @@ export default function Contact() {
       });
   
       if (response.ok) {
-        console.log('Email sent successfully');
+        // console.log('Email sent successfully');
       } else {
-        console.error('Failed to send email');
+        // console.error('Failed to send email');
       }
     } catch (error) {
       console.error('Error sending email:', error);
     }
   };
+
+ const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER; // ✅ accessible côté client
+  const message = "Bonjour, je souhaite vous contacter !";
+
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
 
   return (
     <section
@@ -51,7 +57,7 @@ export default function Contact() {
           </div>
 
           <div className="flex mt-3.5 h-auto p-2.5 flex-row items-center gap-2.5">
-            <Phone className='bg-primary rounded  w-auto h-auto p-3'/>
+            <FaWhatsappSquare className='bg-green-400 h-12 w-12 rounded p-2 '/>
             <div className="">
               <p className='text-gray-500'>Phone</p>
               <p> +261 34 87 171 75 </p>
@@ -59,7 +65,7 @@ export default function Contact() {
           </div>
 
           <div className="flex mt-3.5 h-auto p-2.5 flex-row items-center gap-2.5">
-            <Locate className='bg-secondary-foreground rounded text-secondary  w-auto h-auto p-3'/>
+            <LocateFixed className='bg-secondary-foreground rounded text-secondary  w-auto h-auto p-3'/>
             <div className="">
               <p className='text-gray-500'>Locatisation</p>
               <p>Fianarantsoa, Madagascar</p>
@@ -69,19 +75,19 @@ export default function Contact() {
           <div className="mt-6 p-4">
             <p className='text-xl text-secondary-foreground'>Etablissons une connéxion</p>
             <div className="flex flex-row gap-6 mt-3.5 ">
-              <a href="" className=' '>
+              <a href="https://www.facebook.com/daniel.dan.258056" className='' target="_blank" rel="noopener noreferrer">
                 <FaFacebook className='bg-blue-500 h-10 w-10 p-2 rounded-full'/>
               </a>
 
-               <a href="" className=' '>
-                <FaGithub className='bg-blend-darken border h-10 w-10 p-2 rounded-full'/>
+               <a href="https://github.com/andriamampionona" className=' ' target="_blank" rel="noopener noreferrer">
+                <FaGithub className='bg-primary  border h-10 w-10 p-2 rounded-full'/>
               </a>
 
-              <a href="" className=' '>
-                <FaInstagram className='bg-blue-400 h-10 w-10 p-2 rounded-full'/>
+              <a href="https://www.linkedin.com/in/daniel-daniel-86a1282a6/" className=' ' target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className='bg-blue-400 h-10 w-10 p-2 rounded-full'/>
               </a>
 
-              <a href="" className=' '>
+              <a href={whatsappLink} className=' '  target="_blank" rel="noopener noreferrer">
                 <FaWhatsappSquare className='bg-green-400 h-10 w-10 p-2 rounded-full'/>
               </a>
 

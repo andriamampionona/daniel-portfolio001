@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { TypingAnimation } from "./magicui/typing-animation";
-import { BorderBeam } from "./magicui/border-beam";
+
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { Database, JapaneseYen } from "lucide-react";
 import {
@@ -28,13 +28,11 @@ export default function Projects() {
   const [activeSlideHotel, setActiveSlideHotel] = useState(0);
   const [activeSlideGantt, setActiveSlideGantt] = useState(0);
   const [activeSlidePortfolio, setActiveSlidePortfolio] = useState(0);
-  const [activeSlideTongasoa, setActiveSlideTongasoa] = useState(0);
 
   // Nombre d'images par carousel
   const hotelSlidesCount = 2;
   const ganttSlidesCount = 2;
   const portfolioSlidesCount = 2;
-  const tongasoaSlidesCount = 2;
 
   // Fonction pour afficher les dots de pagination
   function PaginationDots({
@@ -100,8 +98,9 @@ export default function Projects() {
   }
 
   return (
-    <div id="projets" className="font-mono max-w-7xl mx-auto px-6 py-10 flex flex-col gap-8" >
-      <BorderBeam className="h-28" />
+    <div className="font-mono max-w-7xl mx-auto px-6 py-10 flex flex-col gap-8" >
+      
+      
       <TypingAnimation className="text-2xl text-center sm:text-left lg:text-6xl md:text-5xl sm:text-4xl font-[family-name:var(--font-geist-sans)]">
         Mes projets
       </TypingAnimation>
@@ -270,57 +269,7 @@ export default function Projects() {
           </Card>
         </motion.div>
 
-        {/* Projet 4 - Tongasoa */}
-        <motion.div
-          className="flex flex-col lg:flex-row border-2 border-card rounded-3xl p-5 gap-6 cursor-pointer"
-          initial="initial"
-          animate="animate"
-          variants={fadeUp}
-          transition={{ delay: 0.3 }}
-          whileHover={hoverEffect}
-        >
-          <div className="w-full lg:w-1/2 rounded-2xl shadow-md overflow-hidden">
-            <h2 className="text-2xl font-mono mb-4">Tongasoa site web</h2>
-            <StyledCarousel
-              value={activeSlideTongasoa}
-              onValueChange={setActiveSlideTongasoa}
-              slidesCount={tongasoaSlidesCount}
-              className="m-6 rounded-2xl overflow-hidden"
-            >
-              <CarouselItem>
-                <Image
-                  src="/tongasoa.png"
-                  alt="Site Tongasoa"
-                  width={800}
-                  height={450}
-                  className="rounded-2xl"
-                  priority
-                />
-              </CarouselItem>
-              <CarouselItem>
-                <Image
-                  src="/tongasoa.png"
-                  alt="Site Tongasoa"
-                  width={800}
-                  height={450}
-                  className="rounded-2xl"
-                />
-              </CarouselItem>
-            </StyledCarousel>
-          </div>
 
-          <Card className="w-full lg:w-1/2 flex flex-col justify-center p-6 shadow-lg">
-            <CardHeader className="text-sm font-semibold">🪡➕ Site Web de Tongasoa</CardHeader>
-            <CardContent className="text-xs text-muted-foreground leading-relaxed space-y-4">
-              <p>C’est un site web.</p>
-              <p>Ce site a été conçu avec Next.js v15 et déployé sur Vercel.</p>
-              <p className="flex items-center gap-2">
-                <JapaneseYen />
-                Ce site web a été conçu avec Next.js v15 et déployé sur Vercel.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
       </div>
     </div>
   );

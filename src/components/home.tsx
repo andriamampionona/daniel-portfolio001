@@ -3,7 +3,6 @@ import React from 'react'
 import { AuroraText } from './magicui/aurora-text'
 import { ShimmerButton } from './magicui/shimmer-button'
 import Image from 'next/image'
-import { MySheet } from './sheet'
 import { InteractiveHoverButton } from './magicui/interactive-hover-button'
 import { ArrowDownCircleIcon } from 'lucide-react'
 import { TypeAnimation } from 'react-type-animation';
@@ -11,7 +10,7 @@ import { TypeAnimation } from 'react-type-animation';
 export default function HomePage() {
   return (
     <>
-        <div className="sm:flex-col lg:flex-row md:flex-col xl:flex-row space-y-4 text-center sm:text-left md:text-left lg:text-left  flex flex-col gap-x-4 items-center justify-between w-full max-w-5xl">
+        <div className=" md:px-20 sm:flex-col lg:flex-row md:flex-col xl:flex-row space-y-4 text-center sm:text-left md:text-left lg:text-left  flex flex-col gap-x-4 items-center justify-between w-full max-w-5xl">
             <div className="">
               <h1 className="font-poppins text-4xl   font-bold tracking-tighter md:text-5xl lg:text-7xl">
                 Daniel <AuroraText className="pt-10">Nomenjanahary</AuroraText>
@@ -59,9 +58,14 @@ export default function HomePage() {
           
           </div>
           <div className="flex flex-col justify-center items-center p-6  ">
-            <MySheet>
-            <InteractiveHoverButton className="text-xs">Me contacter</InteractiveHoverButton>
-            </MySheet>
+            
+
+            <InteractiveHoverButton className="text-xs">
+              <a href="#contact">
+              Me contacter
+              </a>
+              </InteractiveHoverButton>
+          
             <ArrowDownCircleIcon height={50}></ArrowDownCircleIcon>
             
           </div>
